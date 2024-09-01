@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "badges",
+  "info": {
+    "singularName": "badge",
+    "pluralName": "badges",
+    "displayName": "ЗначокЗаСотку",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "runner": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::runner.runner",
+      "inversedBy": "badges"
+    },
+    "number": {
+      "type": "string",
+      "required": true
+    },
+    "race": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::race.race"
+    }
+  }
+}

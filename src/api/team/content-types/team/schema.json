@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "teams",
+  "info": {
+    "singularName": "team",
+    "pluralName": "teams",
+    "displayName": "Команда",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "distance": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::distance.distance",
+      "inversedBy": "teams"
+    },
+    "name": {
+      "type": "string",
+      "pluginOptions": {}
+    },
+    "start": {
+      "type": "datetime",
+      "pluginOptions": {}
+    },
+    "finish": {
+      "type": "datetime",
+      "pluginOptions": {}
+    },
+    "comm": {
+      "type": "string",
+      "pluginOptions": {}
+    },
+    "place": {
+      "pluginOptions": {},
+      "type": "integer"
+    },
+    "result": {
+      "pluginOptions": {},
+      "type": "integer"
+    },
+    "dns": {
+      "type": "boolean"
+    },
+    "dnf": {
+      "type": "boolean"
+    },
+    "members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::member.member",
+      "mappedBy": "team"
+    },
+    "reward": {
+      "type": "string"
+    }
+  }
+}

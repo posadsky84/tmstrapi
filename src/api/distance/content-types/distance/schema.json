@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "distances",
+  "info": {
+    "singularName": "distance",
+    "pluralName": "distances",
+    "displayName": "Дистанция",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "race": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::race.race",
+      "inversedBy": "distances"
+    },
+    "fullName": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "km": {
+      "type": "integer"
+    },
+    "courseType": {
+      "type": "string"
+    },
+    "teams": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::team.team",
+      "mappedBy": "distance"
+    }
+  }
+}

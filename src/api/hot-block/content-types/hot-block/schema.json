@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "hot_blocks",
+  "info": {
+    "singularName": "hot-block",
+    "pluralName": "hot-blocks",
+    "displayName": "hotBlock"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hotText": {
+      "type": "blocks"
+    }
+  }
+}

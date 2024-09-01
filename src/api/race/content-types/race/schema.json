@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "races",
+  "info": {
+    "singularName": "race",
+    "pluralName": "races",
+    "displayName": "Гонка",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "ddate": {
+      "type": "date"
+    },
+    "magnet": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "sname": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "distances": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::distance.distance",
+      "mappedBy": "race"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Открыта регистрация",
+        "Объявлено место старта",
+        "Закрыта регистрация",
+        "Готовы результаты",
+        "Протокол закрыт"
+      ]
+    },
+    "cardPicture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "rulesLink": {
+      "type": "string"
+    }
+  }
+}

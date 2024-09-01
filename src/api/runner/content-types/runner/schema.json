@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "runners",
+  "info": {
+    "singularName": "runner",
+    "pluralName": "runners",
+    "displayName": "Бегун",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "midName": {
+      "type": "string"
+    },
+    "year": {
+      "type": "integer"
+    },
+    "location": {
+      "type": "string"
+    },
+    "members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::member.member",
+      "mappedBy": "runner"
+    },
+    "badges": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::badge.badge",
+      "mappedBy": "runner"
+    }
+  }
+}
