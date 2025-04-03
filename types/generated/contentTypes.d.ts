@@ -850,6 +850,7 @@ export interface ApiDistanceDistance extends Schema.CollectionType {
       'oneToMany',
       'api::team.team'
     >;
+    runnersStartedCount: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -962,6 +963,37 @@ export interface ApiMemberMember extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::member.member',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPageAboutPageAbout extends Schema.SingleType {
+  collectionName: 'pages_about';
+  info: {
+    singularName: 'page-about';
+    pluralName: 'pages-about';
+    displayName: '\u0421\u0442\u0440\u0430\u043D\u0438\u0446\u0430 \u041E \u043D\u0430\u0441';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-about.page-about',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-about.page-about',
       'oneToOne',
       'admin::user'
     > &
@@ -1118,6 +1150,7 @@ declare module '@strapi/types' {
       'api::hot-block.hot-block': ApiHotBlockHotBlock;
       'api::main-page.main-page': ApiMainPageMainPage;
       'api::member.member': ApiMemberMember;
+      'api::page-about.page-about': ApiPageAboutPageAbout;
       'api::race.race': ApiRaceRace;
       'api::runner.runner': ApiRunnerRunner;
       'api::team.team': ApiTeamTeam;

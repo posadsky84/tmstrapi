@@ -35,6 +35,9 @@
       "relation": "oneToMany",
       "target": "api::team.team",
       "mappedBy": "distance"
+    },
+    "runnersStartedCount": {
+      "type": "integer"
     }
   }
 }
